@@ -14,10 +14,10 @@ public class TestDistancia {
         System.out.println("Cuántos movimientos desea realizar:");
         int n = datos.nextInt();
         Coordenadas[] coordenadas = new Coordenadas[n];
-        System.out.println("Los puntos son: ");
         pedirCoordenadas(coordenadas);
+        System.out.println("Los puntos son: ");
         for (Coordenadas c : coordenadas) {
-            System.out.println(coordenadas);
+            System.out.println(c);
         }
 
     }
