@@ -22,20 +22,17 @@ public class TestCoordenadas {
     }
 
     public static void pedirCoordenadas(Coordenadas[] coor) {
-        Random aleatorio = new Random();
+
         int x, y;
 
         int opcion;
-        int mover = (int) (Math.random() * 4 + 1);
-        datos.nextLine();
-        System.out.println("Punto inicial");
-        System.out.println("Coordenada en x:");
-        x = datos.nextInt();
-        System.out.println("Coordenada en y:");
-        y = datos.nextInt();
-        for (int i = 0; i < coor.length; i++) {
+        
+        
 
-            coor[i] = new Coordenadas(x, y);
+        x = 0;
+        y = 0;
+        for (int i = 0; i < coor.length; i++) {
+            int mover = ( (int) (Math.random() * 10+5)) ;
             System.out.println("Digite el nùmero del movimiento que desea para el punto ");
             System.out.println("1.-Arriba");
             System.out.println("2.-Abajo");
@@ -45,21 +42,35 @@ public class TestCoordenadas {
 
             if (opcion == 1) {
                 y = y + mover;
-                System.out.println("x: "+x+",y: "+y);
+                System.out.println("x: " + x + ",y: " + y);
             } else if (opcion == 2) {
                 y = y - mover;
-                System.out.println("x: "+x+",y: "+y);
+                System.out.println("x: " + x + ",y: " + y);
             } else if (opcion == 3) {
                 x = x + mover;
-                System.out.println("x: "+x+",y: "+y);
+                System.out.println("x: " + x + ",y: " + y);
             } else if (opcion == 4) {
                 x = x - mover;
-                System.out.println("x: "+x+",y: "+y);
+                System.out.println("x: " + x + ",y: " + y);
             } else {
                 System.out.println("ERROR");
             }
-            coor[i]= new Coordenadas(x,y);
+            coor[i] = new Coordenadas(x, y);
         }
 
+    }
+
+    public double calcularDistancia(Coordenadas coor[]) {
+        
+        String [] di;
+        for (int i = 0; i < coor.length; i++) {
+            for (int j = 0; j < coor.length - 1; j++) {
+                
+                di[i]= Math.sqrt((coor[j].getX()-)^2);
+                
+            }
+        }
+
+        return 0;
     }
 }
