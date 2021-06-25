@@ -1,6 +1,6 @@
 package test;
 
-import dominio.Distancia;
+import dominio.Coordenadas;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -13,31 +13,27 @@ public class TestDistancia {
 
         System.out.println("Cuántos movimientos desea realizar:");
         int n = datos.nextInt();
-        Distancia[] distancias = new Distancia[n];
+        Coordenadas[] coordenadas = new Coordenadas[n];
+        System.out.println("Los puntos son: ");
+        pedirCoordenadas(coordenadas);
+        for (Coordenadas c : coordenadas) {
+            System.out.println(coordenadas);
+        }
 
     }
 
-    public static void puntosAleatorios(Distancia[] dis) {
+    public static void pedirCoordenadas (Coordenadas[] coor ) {
         Random randon = new Random();
-        System.out.println("Cuántos pasos quiere dar en x:");
-        int x = datos.nextInt();
-        System.out.println("Cuántos pasos quiere dar en y:");
-        int y = datos.nextInt();
-        int[][] coordenadas = new int[2][2];
+        int x,y; 
 
-        for (int i = 0; i < dis.length; i++) {
-            
-            
+        for (int i = 0; i < coor .length; i++) {
+            datos.nextLine();
+            System.out.println("Punto Nro :"+(i+1));
+            System.out.println("Coordenada en x:");
+            x = datos.nextInt();
+            System.out.println("Coordenada en y:");
+            y = datos.nextInt();
+            coor [i] = new Coordenadas(x,y);
         }
-        String punto =" ";
-               
-        for (int i = 0; i < dis.length; i++) {
-            for (int j = 0; j < dis.length; j++) {
-                coordenadas[i][j] = randon.nextInt(10);
-                
-            }
-        }
-        
-
     }
 }
